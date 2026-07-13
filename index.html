@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Ονομα Επιθετο MD, PHD, νευρολόγος στη Πολη. Νευρολογικές εξετάσεις, οσφυονωτιαία παρακέντηση, EMG, εγχύσεις βοτουλινικής τοξίνης, ραντεβού και επικοινωνία.">
-  <meta name="keywords" content="νευρολόγος, νευρολόγος, νευρολογικές εξετάσεις, οσφυονωτιαία παρακέντηση, EMG, νευρογράφημα, εγχύσεις βοτουλινικής τοξίνης, ημικρανία, δυστονία, σπαστικότητα, νευρολογικό ιατρείο, ραντεβού νευρολόγου">
-  <meta name="author" content="Ονομα Επιθετο MD, PHD">
+  <meta name="description" content="Ονομα Επιθετο MD, PHD, νευρολόγος στη Πολη. Νευρολογικές εξετάσεις, οσφυονωτιαία παρακέντηση, EMG" data-desc-en="Firstname Lastname MD, PhD - Neurologist in City. Neurological exams, lumbar puncture, EMG">
+  <meta name="keywords" content="νευρολόγος, νευρολόγος, νευρολογικές εξετάσεις" data-keywords-en="neurologist, neurological exams, lumbar puncture, EMG">
+  <meta name="author" content="Ονομα Επιθετο MD, PHD" data-author-en="Firstname Lastname MD, PhD">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#0d6efd">
   <link rel="canonical" href="https://www.yourwebsite.gr/">
-  <title>Ονομα Επιθετο MD, PHD | Νευρολόγος</title>
+  <title data-title-en="Firstname Lastname MD, PhD | Neurologist">Ονομα Επιθετο MD, PHD | Νευρολόγος</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,16 +18,23 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.ico" >
+  <style>
+    /* small helper for language toggle */
+    [data-lang] { display: inline; }
+  </style>
 </head>
 <body>
-  <a href="#content" class="skip-link">Μετάβαση στο κυρίως περιεχόμενο</a>
+  <a href="#content" class="skip-link"><span data-lang="el">Μετάβαση στο κυρίως περιεχόμενο</span><span data-lang="en" style="display:none">Skip to main content</span></a>
 
   <header>
     <nav class="navbar navbar-expand-lg sticky-top" aria-label="Κύρια πλοήγηση">
       <div class="container">
         <a class="navbar-brand d-flex align-items-center gap-2" href="#home" aria-label="Αρχική">
           <span class="brand-mark" aria-hidden="true"><i class="bi bi-asterisk"></i></span>
-          <span>Ονομα Επιθετο</span>
+          <span>
+            <span data-lang="el">Ονομα Επιθετο</span>
+            <span data-lang="en" style="display:none">Firstname Lastname</span>
+          </span>
         </a>
 
         <button class="navbar-toggler focus-ring" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
@@ -37,15 +44,24 @@
 
         <div class="collapse navbar-collapse" id="navMain">
           <ul class="navbar-nav ms-auto align-items-lg-center">
-            <li class="nav-item"><a class="nav-link" href="#home">Αρχική</a></li>
-            <li class="nav-item"><a class="nav-link" href="#services">Υπηρεσίες</a></li>
-            <li class="nav-item"><a class="nav-link" href="#about">Ιατρός</a></li>
+            <li class="nav-item"><a class="nav-link" href="#home"><span data-lang="el">Αρχική</span><span data-lang="en" style="display:none">Home</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#services"><span data-lang="el">Υπηρεσίες</span><span data-lang="en" style="display:none">Services</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#about"><span data-lang="el">Ιατρός</span><span data-lang="en" style="display:none">About</span></a></li>
             <!--<li class="nav-item"><a class="nav-link" href="#articles">Άρθρα</a></li>-->
-            <li class="nav-item"><a class="nav-link" href="#contact">Επικοινωνία</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact"><span data-lang="el">Επικοινωνία</span><span data-lang="en" style="display:none">Contact</span></a></li>
             <li class="nav-item ms-lg-3">
               <a class="btn btn-outline-brand focus-ring" href="tel:1234567890">
-                <i class="bi bi-telephone me-2" aria-hidden="true"></i> Ραντεβού
+                <i class="bi bi-telephone me-2" aria-hidden="true"></i>
+                <span data-lang="el">Ραντεβού</span>
+                <span data-lang="en" style="display:none">Book</span>
               </a>
+            </li>
+            <li class="nav-item ms-2 d-flex align-items-center">
+              <!-- Language switcher -->
+              <div class="btn-group" role="group" aria-label="Language switch">
+                <button class="btn btn-sm btn-light" type="button" id="lang-el">ΕΛ</button>
+                <button class="btn btn-sm btn-light" type="button" id="lang-en">EN</button>
+              </div>
             </li>
           </ul>
         </div>
@@ -60,26 +76,35 @@
           <div class="col-lg-7">
             <span class="hero-badge mb-3">
               <i class="bi bi-shield-check" aria-hidden="true"></i>
-              Ειδικος Νευρολόγος MD, PHD
+              <span data-lang="el">Ειδικος Νευρολόγος MD, PHD</span>
+              <span data-lang="en" style="display:none">Specialist Neurologist MD, PhD</span>
             </span>
-            <h1 class="display-4 mb-3">Νευρολόγος με σύγχρονη, ανθρώπινη προσέγγιση</h1>
+            <h1 class="display-4 mb-3">
+              <span data-lang="el">Νευρολόγος με σύγχρονη, ανθρώπινη προσέγγιση</span>
+              <span data-lang="en" style="display:none">Neurologist with a modern, humane approach</span>
+            </h1>
             <p class="lead mb-4 hero-copy">
-              Εξειδικευμένη διάγνωση και θεραπεία νευρολογικών παθήσεων, με στόχο την αξιόπιστη φροντίδα και την καλύτερη ποιότητα ζωής για κάθε ασθενή.
+              <span data-lang="el">Εξειδικευμένη διάγνωση και θεραπεία νευρολογικών παθήσεων, με στόχο την αξιόπιστη φροντίδα και την εμπιστοσύνη.</span>
+              <span data-lang="en" style="display:none">Specialized diagnosis and treatment of neurological conditions, aiming for reliable care and trust.</span>
             </p>
             <div class="d-flex flex-column flex-sm-row gap-3">
               <a href="#contact" class="btn btn-light btn-lg focus-ring">
-                <i class="bi bi-calendar2-check me-2" aria-hidden="true"></i> Κλείστε ραντεβού
+                <i class="bi bi-calendar2-check me-2" aria-hidden="true"></i>
+                <span data-lang="el">Κλείστε ραντεβού</span>
+                <span data-lang="en" style="display:none">Book an appointment</span>
               </a>
               <a href="#services" class="btn btn-outline-light btn-lg focus-ring">
-                <i class="bi bi-grid-3x3-gap me-2" aria-hidden="true"></i> Δείτε υπηρεσίες
+                <i class="bi bi-grid-3x3-gap me-2" aria-hidden="true"></i>
+                <span data-lang="el">Δείτε υπηρεσίες</span>
+                <span data-lang="en" style="display:none">View services</span>
               </a>
             </div>
           </div>
 
           <div class="col-lg-5">
             <div class="hero-card p-4 p-md-4">
-              <h2 class="h4 fw-bold mb-3">Για ραντεβού</h2>
-              <p class="mb-3 hero-card-text">Καλέστε μας σε ημέρες και ώρες ιατρείου.</p>
+              <h2 class="h4 fw-bold mb-3"><span data-lang="el">Για ραντ��βού</span><span data-lang="en" style="display:none">For appointments</span></h2>
+              <p class="mb-3 hero-card-text"><span data-lang="el">Καλέστε μας σε ημέρες και ώρες ιατρείου.</span><span data-lang="en" style="display:none">Call us during clinic days and hours.</span></p>
               <a class="btn btn-brand btn-lg w-100 focus-ring mb-3" href="tel:1234567890">
                 <i class="bi bi-telephone me-2" aria-hidden="true"></i> 1234 567 890
               </a>
@@ -87,10 +112,10 @@
                 <div class="d-flex gap-3">
                   <span class="icon-wrap" aria-hidden="true"><i class="bi bi-clock"></i></span>
                   <div>
-                    <div class="fw-semibold">Ώρες λειτουργίας</div>
-                    <div class="text-white-75">Καθημερινές: 9πμ - 2μμ &amp; 5μμ - 9μμ</div>
-                    <div class="text-white-75">Κατόπιν ραντεβού</div>
-                    <div class="text-white-75">Σάββατο - Κυριακή: Κλειστά</div>
+                    <div class="fw-semibold"><span data-lang="el">Ώρες λειτουργίας</span><span data-lang="en" style="display:none">Opening hours</span></div>
+                    <div class="text-white-75"><span data-lang="el">Καθημερινές: 9πμ - 2μμ &amp; 5μμ - 9μμ</span><span data-lang="en" style="display:none">Weekdays: 9am - 2pm &amp; 5pm - 9pm</span></div>
+                    <div class="text-white-75"><span data-lang="el">Κατόπιν ραντεβού</span><span data-lang="en" style="display:none">By appointment</span></div>
+                    <div class="text-white-75"><span data-lang="el">Σάββατο - Κυριακή: Κλειστά</span><span data-lang="en" style="display:none">Saturday - Sunday: Closed</span></div>
                   </div>
                 </div>
               </div>
@@ -108,8 +133,8 @@
               <div class="info-box">
                 <span class="icon-wrap" aria-hidden="true"><i class="bi bi-geo-alt"></i></span>
                 <div>
-                  <div class="fw-bold text-dark">Ιατρείο</div>
-                  <div class="text-muted">Πολη, Περιφερεια</div>
+                  <div class="fw-bold text-dark"><span data-lang="el">Ιατρείο</span><span data-lang="en" style="display:none">Clinic</span></div>
+                  <div class="text-muted"><span data-lang="el">Πολη, Περιφερεια</span><span data-lang="en" style="display:none">City, Region</span></div>
                 </div>
               </div>
             </div>
@@ -117,7 +142,7 @@
               <div class="info-box">
                 <span class="icon-wrap" aria-hidden="true"><i class="bi bi-envelope"></i></span>
                 <div>
-                  <div class="fw-bold text-dark">Email</div>
+                  <div class="fw-bold text-dark"><span data-lang="el">Email</span><span data-lang="en" style="display:none">Email</span></div>
                   <div class="text-muted">info@youremail.gr</div>
                 </div>
               </div>
@@ -126,8 +151,8 @@
               <div class="info-box">
                 <span class="icon-wrap" aria-hidden="true"><i class="bi bi-clock-history"></i></span>
                 <div>
-                  <div class="fw-bold text-dark">Ώρες Λειτουργίας</div>
-                  <div class="text-muted">Καθημερινές: 9πμ - 2μμ &amp; 5μμ - 9μμ</div>
+                  <div class="fw-bold text-dark"><span data-lang="el">Ώρες Λειτουργίας</span><span data-lang="en" style="display:none">Opening Hours</span></div>
+                  <div class="text-muted"><span data-lang="el">Καθημερινές: 9πμ - 2μμ &amp; 5μμ - 9μμ</span><span data-lang="en" style="display:none">Weekdays: 9am - 2pm &amp; 5pm - 9pm</span></div>
                 </div>
               </div>
             </div>
@@ -143,14 +168,15 @@
             <img
               src="https://picsum.photos/720/1280.webp?random=8"
               class="img-fluid rounded-4 shadow-sm"
-              alt="Ονομα Επιθετο MD, PHD σε ιατρικό περιβάλλον">
+              alt="Ονομα Επιθετο MD, PHD σε ιατρικό περιβάλλον" data-alt-en="Firstname Lastname MD, PhD in a clinical setting">
           </div>
           <div class="col-lg-7">
-            <span class="eyebrow">Νευρολογικές παθήσεις και συμπτώματα</span>
-            <h2 class="section-title display-6 mb-3">Βρείτε τον καλύτερο νευρολόγο στη Πολη</h2>
+            <span class="eyebrow"><span data-lang="el">Νευρολογικές παθήσεις και συμπτώματα</span><span data-lang="en" style="display:none">Neurological conditions and symptoms</span></span>
+            <h2 class="section-title display-6 mb-3"><span data-lang="el">Βρείτε τον καλύτερο νευρολόγο στη Πολη</span><span data-lang="en" style="display:none">Find the best neurologist in the City</span></h2>
             <div class="divider mb-4"></div>
             <p class="lead-text">
-              Αν αντιμετωπίζετε νευρολογικά προβλήματα, είναι σημαντικό να αναζητήσετε τη βοήθεια ενός έμπειρου νευρολόγου. Ο ιατρος Ονομα Επιθετο MD, PHD παρέχει διάγνωση, παρακολούθηση και στοχευμένη θεραπευτική προσέγγιση.
+              <span data-lang="el">Αν αντιμετωπίζετε νευρολογικά προβλήματα, είναι σημαντικό να αναζητήσετε τη βοήθεια ενός έμπειρου ιατρού.</span>
+              <span data-lang="en" style="display:none">If you face neurological issues, it's important to seek help from an experienced physician.</span>
             </p>
 
             <div class="row g-3 mt-1">
@@ -160,8 +186,8 @@
                     <div class="feature">
                       <span class="icon-wrap" aria-hidden="true"><i class="bi bi-award"></i></span>
                       <div>
-                        <h3>Πολυετής εμπειρία</h3>
-                        <p>Εξειδίκευση στις νευρολογικές παθήσεις με προσεκτική παρακολούθηση.</p>
+                        <h3><span data-lang="el">Πολυετής εμπειρία</span><span data-lang="en" style="display:none">Years of experience</span></h3>
+                        <p><span data-lang="el">Εξειδίκευση στις νευρολογικές παθήσεις με προσεκτική παρακολούθηση.</span><span data-lang="en" style="display:none">Expertise in neurological disorders with careful follow-up.</span></p>
                       </div>
                     </div>
                   </div>
@@ -173,8 +199,8 @@
                     <div class="feature">
                       <span class="icon-wrap" aria-hidden="true"><i class="bi bi-cpu"></i></span>
                       <div>
-                        <h3>Σύγχρονες τεχνικές</h3>
-                        <p>Χρήση σύγχρονων μεθόδων για ακριβέστερη αξιολόγηση και θεραπεία.</p>
+                        <h3><span data-lang="el">Σύγχρονες τεχνικές</span><span data-lang="en" style="display:none">Modern techniques</span></h3>
+                        <p><span data-lang="el">Χρήση σύγχρονων μεθόδων για ακριβέστερη αξιολόγηση και θεραπεία.</span><span data-lang="en" style="display:none">Use of modern methods for more accurate assessment and treatment.</span></p>
                       </div>
                     </div>
                   </div>
@@ -186,8 +212,8 @@
                     <div class="feature">
                       <span class="icon-wrap" aria-hidden="true"><i class="bi bi-heart"></i></span>
                       <div>
-                        <h3>Ανθρώπινη φροντίδα</h3>
-                        <p>Επικοινωνία με σεβασμό, καθοδήγηση και ξεκάθαρη ενημέρωση.</p>
+                        <h3><span data-lang="el">Ανθρώπινη φροντίδα</span><span data-lang="en" style="display:none">Compassionate care</span></h3>
+                        <p><span data-lang="el">Επικοινωνία με σεβασμό, καθοδήγηση και ξεκάθαρη ενημέρωση.</span><span data-lang="en" style="display:none">Communication with respect, guidance and clear information.</span></p>
                       </div>
                     </div>
                   </div>
@@ -199,8 +225,8 @@
                     <div class="feature">
                       <span class="icon-wrap" aria-hidden="true"><i class="bi bi-universal-access"></i></span>
                       <div>
-                        <h3>Προσβασιμότητα</h3>
-                        <p>Σχεδιασμός που δουλεύει καλά σε κινητά, tablet και desktop.</p>
+                        <h3><span data-lang="el">Προσβασιμότητα</span><span data-lang="en" style="display:none">Accessibility</span></h3>
+                        <p><span data-lang="el">Σχεδιασμός που δουλεύει καλά σε κινητά, tablet και desktop.</span><span data-lang="en" style="display:none">Design that works well on mobile, tablet and desktop.</span></p>
                       </div>
                     </div>
                   </div>
@@ -209,7 +235,8 @@
             </div>
 
             <p class="lead-text mt-4 mb-0">
-              Κλείστε ένα ραντεβού σήμερα και ξεκινήστε το ταξίδι σας προς την ανάρρωση.
+              <span data-lang="el">Κλείστε ένα ραντεβού σήμερα και ξεκινήστε το ταξίδι σας προς την ανάρ��ωση.</span>
+              <span data-lang="en" style="display:none">Book an appointment today and start your journey to recovery.</span>
             </p>
           </div>
         </div>
@@ -221,7 +248,7 @@
         <div class="quote-card">
           <div class="quote-mark" aria-hidden="true">“</div>
           <blockquote class="blockquote mb-0">
-            <p>Η υγεία δεν είναι το παν, αλλά χωρίς υγεία το παν είναι τίποτα.</p>
+            <p><span data-lang="el">Η υγεία δεν είναι το παν, αλλά χωρίς υγεία το παν είναι τίποτα.</span><span data-lang="en" style="display:none">Health is not everything, but without health everything is nothing.</span></p>
           </blockquote>
           <figcaption class="blockquote-footer mt-3 mb-0">Arthur Schopenhauer</figcaption>
         </div>
@@ -231,71 +258,72 @@
     <section id="services" class="section">
       <div class="container">
         <div class="text-center mb-5">
-          <span class="eyebrow">Εξειδικευμένες νευρολογικές υπηρεσίες</span>
-          <h2 class="section-title display-6">Υπηρεσίες του ιατρείου</h2>
+          <span class="eyebrow"><span data-lang="el">Εξειδικευμένες νευρολογικές υπηρεσίες</span><span data-lang="en" style="display:none">Specialized neurological services</span></span>
+          <h2 class="section-title display-6"><span data-lang="el">Υπηρεσίες του ιατρείου</span><span data-lang="en" style="display:none">Clinic services</span></h2>
           <p class="lead-text mx-auto" style="max-width: 720px;">
-            Οι παρακάτω υπηρεσίες αντιστοιχούν στο περιεχόμενο της σελίδας και δίνουν καθαρή, λειτουργική παρουσίαση των βασικών πράξεων.
+            <span data-lang="el">Οι παρακάτω υπηρεσίες αντιστοιχούν στο περιεχόμενο της σελίδας και δίνουν καθαρή, λειτουργική παρουσίαση.</span>
+            <span data-lang="en" style="display:none">The following services reflect the page content and provide a clear, functional presentation.</span>
           </p>
         </div>
 
         <div class="row g-4">
           <div class="col-lg-4 col-md-6">
             <article class="card-clean service-card">
-              <img src="https://picsum.photos/1280/720.webp?random=1" class="service-image" alt="Νευρολογική εξέταση σε ιατρείο">
+              <img src="https://picsum.photos/1280/720.webp?random=1" class="service-image" alt="Νευρολογική εξέταση σε ιατρείο" data-alt-en="Neurological examination in clinic">
               <div class="card-body">
                 <span class="icon-wrap mb-3" aria-hidden="true"><i class="bi bi-droplet-half"></i></span>
-                <h3 class="h5 fw-bold text-dark">Οσφυονωτιαία παρακέντηση</h3>
-                <p>Διαγνωστική πράξη για την αξιολόγηση εγκεφαλονωτιαίου υγρού και νευρολογικών παθήσεων.</p>
+                <h3 class="h5 fw-bold text-dark"><span data-lang="el">Οσφυονωτιαία παρακέντηση</span><span data-lang="en" style="display:none">Lumbar puncture</span></h3>
+                <p><span data-lang="el">Διαγνωστική πράξη για την αξιολόγηση εγκεφαλονωτιαίου υγρού και νευρολογικών παθήσεων.</span><span data-lang="en" style="display:none">A diagnostic procedure to evaluate cerebrospinal fluid and neurological conditions.</span></p>
               </div>
             </article>
           </div>
           <div class="col-lg-4 col-md-6">
             <article class="card-clean service-card">
-              <img src="https://picsum.photos/1280/720.webp?random=2" class="service-image" alt="Ιατρικός εξοπλισμός και θεραπευτική εφαρμογή">
+              <img src="https://picsum.photos/1280/720.webp?random=2" class="service-image" alt="Ιατρικός εξοπλισμός και θεραπευτική εφαρμογή" data-alt-en="Medical equipment and therapeutic application">
               <div class="card-body">
                 <span class="icon-wrap mb-3" aria-hidden="true"><i class="bi bi-capsule"></i></span>
-                <h3 class="h5 fw-bold text-dark">Αντλία συνεχούς έγχυσης ντοπαμίνης</h3>
-                <p>Τοποθέτηση και παρακολούθηση σε συνεργασία με εξειδικευμένο ιατρικό πλαίσιο.</p>
+                <h3 class="h5 fw-bold text-dark"><span data-lang="el">Αντλία συνεχούς έγχυσης ντοπαμίνης</span><span data-lang="en" style="display:none">Continuous dopamine infusion pump</span></h3>
+                <p><span data-lang="el">Τοποθέτηση και παρακολούθηση σε συνεργασία με εξειδικευμένο ιατρικό πλαίσιο.</span><span data-lang="en" style="display:none">Placement and monitoring in cooperation with specialized medical teams.</span></p>
               </div>
             </article>
           </div>
           <div class="col-lg-4 col-md-6">
             <article class="card-clean service-card">
-              <img src="https://picsum.photos/1280/720.webp?random=3" class="service-image" alt="Ιατρός με σύριγγα σε κλινικό περιβάλλον">
+              <img src="https://picsum.photos/1280/720.webp?random=3" class="service-image" alt="Ιατρός με σύριγγα σε κλινικό περιβάλλον" data-alt-en="Doctor with syringe in clinical environment">
               <div class="card-body">
                 <span class="icon-wrap mb-3" aria-hidden="true"><i class="bi bi-syringe"></i></span>
-                <h3 class="h5 fw-bold text-dark">Εγχύσεις βουτιλινικής τοξίνης</h3>
-                <p>Για ημικρανία, δυστονία και σπαστικότητα, με δυνατότητα υπερηχογραφικής καθοδήγησης.</p>
+                <h3 class="h5 fw-bold text-dark"><span data-lang="el">Εγχύσεις βουτιλινικής τοξίνης</span><span data-lang="en" style="display:none">Botulinum toxin injections</span></h3>
+                <p><span data-lang="el">Για ημικρανία, δυστονία και σπαστικότητα, με δυνατότητα υπερηχογραφικής καθοδήγησης.</span><span data-lang="en" style="display:none">For migraine, dystonia and spasticity, with ultrasound guidance if needed.</span></p>
               </div>
             </article>
           </div>
           <div class="col-lg-4 col-md-6">
             <article class="card-clean service-card">
-              <img src="https://picsum.photos/1280/720.webp?random=4" class="service-image" alt="Ιατρική εξέταση και αξιολόγηση ασθενούς">
+              <img src="https://picsum.photos/1280/720.webp?random=4" class="service-image" alt="Ιατρική εξέταση και αξιολόγηση ασθενούς" data-alt-en="Medical examination and patient assessment">
               <div class="card-body">
                 <span class="icon-wrap mb-3" aria-hidden="true"><i class="bi bi-shield-plus"></i></span>
-                <h3 class="h5 fw-bold text-dark">Νευρολογικές εξετάσεις</h3>
-                <p>Κλινική εξέταση, λήψη ιστορικού, φυσική εξέταση και νευροψυχολογικός έλεγχος.</p>
+                <h3 class="h5 fw-bold text-dark"><span data-lang="el">Νευρολογικές εξετάσεις</span><span data-lang="en" style="display:none">Neurological examinations</span></h3>
+                <p><span data-lang="el">Κλινική εξέταση, λήψη ιστορικού, φυσική εξέταση και νευροψυχολογικός έλεγχος.</span><span data-lang="en" style="display:none">Clinical examination, history taking, physical exam and neuropsychological testing.</span></p>
               </div>
             </article>
           </div>
           <div class="col-lg-4 col-md-6">
             <article class="card-clean service-card">
-              <img src="https://picsum.photos/1280/720.webp?random=5" class="service-image" alt="Νευροδιαγνωστικός έλεγχος με ιατρική συσκευή">
+              <img src="https://picsum.photos/1280/720.webp?random=5" class="service-image" alt="Νευροδιαγνωστικός έλεγχος με ιατρική συσκευή" data-alt-en="Neurodiagnostic testing with medical device">
               <div class="card-body">
                 <span class="icon-wrap mb-3" aria-hidden="true"><i class="bi bi-activity"></i></span>
-                <h3 class="h5 fw-bold text-dark">EMG – Νευρογράφημα</h3>
-                <p>Καταγραφή ηλεκτρικής δραστηριότητας μυών για διαταραχές περιφερικών νεύρων και μυών.</p>
+                <h3 class="h5 fw-bold text-dark"><span data-lang="el">EMG – Νευρογράφημα</span><span data-lang="en" style="display:none">EMG – Nerve conduction study</span></h3>
+                <p><span data-lang="el">Καταγραφή ηλεκτρικής δραστηριότητας μυών για διαταραχές περιφερικών νεύρων και μυών.</span><span data-lang="en" style="display:none">Recording muscle electrical activity for peripheral nerve and muscle disorders.</span></p>
               </div>
             </article>
           </div>
           <div class="col-lg-4 col-md-6">
             <article class="card-clean service-card">
-              <img src="https://picsum.photos/1280/720.webp?random=6" class="service-image" alt="Κλινική και νοσοκομειακό περιβάλλον φροντίδας">
+              <img src="https://picsum.photos/1280/720.webp?random=6" class="service-image" alt="Κλινική και νοσοκομειακό περιβάλλον φροντίδας" data-alt-en="Clinical and hospital care environment">
               <div class="card-body">
                 <span class="icon-wrap mb-3" aria-hidden="true"><i class="bi bi-hospital"></i></span>
-                <h3 class="h5 fw-bold text-dark">Νοσηλεία σε συνεργαζόμενη κλινική</h3>
-                <p>Δυνατότητα υποστήριξης σε επείγοντα και χρόνια περιστατικά, όπου απαιτείται.</p>
+                <h3 class="h5 fw-bold text-dark"><span data-lang="el">Νοσηλεία σε συνεργαζόμενη κλινική</span><span data-lang="en" style="display:none">Hospitalization in a partnered clinic</span></h3>
+                <p><span data-lang="el">Δυνατότητα υποστήριξης σε επείγοντα και χρόνια περιστατικά, όπου απαιτείται.</span><span data-lang="en" style="display:none">Support for urgent and chronic cases when required.</span></p>
               </div>
             </article>
           </div>
@@ -309,10 +337,11 @@
           <div class="col-lg-6">
             <div class="card-clean h-100">
               <div class="card-body p-4 p-md-5">
-                <span class="eyebrow">Χαρούμενοι ασθενείς</span>
-                <h2 class="section-title h1 mb-3">Our Client Happy Say About Us</h2>
+                <span class="eyebrow"><span data-lang="el">Χαρούμενοι ασθενείς</span><span data-lang="en" style="display:none">Happy patients</span></span>
+                <h2 class="section-title h1 mb-3"><span data-lang="el">Τι λένε οι ασθενείς μας</span><span data-lang="en" style="display:none">What our clients say</span></h2>
                 <p class="lead-text mb-0">
-                  There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomized words which don’t look even believable.
+                  <span data-lang="el">Υπάρχουν πολλές παραλλαγές του Lorem Ipsum, αλλά οι περισσότεροι έχουν υποστεί αλλαγές.</span>
+                  <span data-lang="en" style="display:none">There are many variations of Lorem Ipsum, but the majority have been altered in some way.</span>
                 </p>
               </div>
             </div>
@@ -320,10 +349,11 @@
           <div class="col-lg-6">
             <div class="card-clean h-100">
               <div class="card-body p-4 p-md-5">
-                <span class="eyebrow">Επείγουσα φροντίδα</span>
-                <h2 class="section-title h1 mb-3">Γρήγορη καθοδήγηση</h2>
+                <span class="eyebrow"><span data-lang="el">Επείγουσα φροντίδα</span><span data-lang="en" style="display:none">Emergency care</span></span>
+                <h2 class="section-title h1 mb-3"><span data-lang="el">Γρήγορη καθοδήγηση</span><span data-lang="en" style="display:none">Quick guidance</span></h2>
                 <p class="lead-text mb-0">
-                  If symptoms are severe or sudden, seek immediate medical attention. For less urgent concerns, use the contact form or call the office directly.
+                  <span data-lang="el">Αν τα συμπτώματα είναι σοβαρά ή ξαφνικά, ζητήστε άμεσα ιατρική βοήθεια. Για λιγότερο επείγοντα, χρησιμοποιήστε τη φόρμα επικοινωνίας ή καλέστε το ιατρείο.</span>
+                  <span data-lang="en" style="display:none">If symptoms are severe or sudden, seek immediate medical attention. For less urgent concerns, use the contact form or call the office.</span>
                 </p>
               </div>
             </div>
@@ -332,58 +362,10 @@
       </div>
     </section>
 
-    <!--
-    <section id="articles" class="section">
-      <div class="container">
-        <div class="text-center mb-5">
-          <span class="eyebrow">Αρθρογραφία</span>
-          <h2 class="section-title display-6">Ενημερωτικό περιεχόμενο</h2>
-          <p class="lead-text mx-auto" style="max-width: 720px;">
-            Τα άρθρα μπορούν να ακολουθήσουν τη δομή του περιεχομένου, με καθαρή καρτέλα και εύκολη ανάγνωση.
-          </p>
-        </div>
-
-        <div class="row g-4">
-          <div class="col-lg-4 col-md-6">
-            <article class="card-clean article-card overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80" class="w-100" alt="Άρθρο για τη διατροφή και τον εγκέφαλο">
-              <div class="card-body">
-                <h3 class="h5 fw-bold text-dark">Η σημασία της διατροφής για καλή νευρολογική υγεία</h3>
-                <p class="mt-2">Η διατροφή παίζει σημαντικό ρόλο στη νευρολογική υγεία και στη λειτουργία του εγκεφάλου.</p>
-                <a class="stretched-link" href="#contact" aria-label="Μετάβαση στην ενότητα επικοινωνίας">Διαβάστε περισσότερα</a>
-              </div>
-            </article>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <article class="card-clean article-card overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1200&q=80" class="w-100" alt="Άρθρο για συμβουλές υγείας του εγκεφάλου">
-              <div class="card-body">
-                <h3 class="h5 fw-bold text-dark">Συμβουλές για τη βελτίωση της υγείας του εγκεφάλου</h3>
-                <p class="mt-2">Υπάρχουν ορισμένα πράγματα που μπορείτε να κάνετε για να βελτιώσετε την υγεία του εγκεφάλου.</p>
-                <a class="stretched-link" href="#contact" aria-label="Μετάβαση στην ενότητα επικοινωνίας">Διαβάστε περισσότερα</a>
-              </div>
-            </article>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <article class="card-clean article-card overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1576765607924-3f4b67a4fca3?auto=format&fit=crop&w=1200&q=80" class="w-100" alt="Άρθρο για πρόληψη εγκεφαλικών επεισοδίων">
-              <div class="card-body">
-                <h3 class="h5 fw-bold text-dark">Πώς να προλάβετε τα εγκεφαλικά επεισόδια;</h3>
-                <p class="mt-2">Τα εγκεφαλικά επεισόδια είναι μια σοβαρή ιατρική κατάσταση που μπορεί να οδηγήσει σε αναπηρία ή ακόμα και θάνατο.</p>
-                <a class="stretched-link" href="#contact" aria-label="Μετάβαση στην ενότητα επικοινωνίας">Διαβάστε περισσότερα</a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-    -->
     <section class="section section-soft">
       <div class="container">
         <div class="share-row" aria-label="Κοινοποίηση σε μέσα κοινωνικής δικτύωσης">
-          <span class="share-label">Κοινοποίηση:</span>
+          <span class="share-label"><span data-lang="el">Κοινοποίηση:</span><span data-lang="en" style="display:none">Share:</span></span>
           <a href="#" class="share-icon" aria-label="Share on Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
           <a href="#" class="share-icon" aria-label="Share on LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
           <a href="#" class="share-icon" aria-label="Share on WhatsApp"><i class="bi bi-whatsapp" aria-hidden="true"></i></a>
@@ -397,10 +379,11 @@
           <div class="col-lg-12">
             <div class="card-clean h-100">
               <div class="card-body p-4 p-md-5">
-                <span class="eyebrow">Επικοινωνία</span>
-                <h2 class="section-title h1 mb-3">Κλείστε ραντεβού</h2>
+                <span class="eyebrow"><span data-lang="el">Επικοινωνία</span><span data-lang="en" style="display:none">Contact</span></span>
+                <h2 class="section-title h1 mb-3"><span data-lang="el">Κλείστε ραντεβού</span><span data-lang="en" style="display:none">Book an appointment</span></h2>
                 <p class="lead-text mb-4">
-                  Καλέστε το ιατρείο για να προγραμματίσουμε την επίσκεψή σας.
+                  <span data-lang="el">Καλέστε το ιατρείο για να προγραμματίσουμε την επίσκεψή σας.</span>
+                  <span data-lang="en" style="display:none">Call the clinic to schedule your visit.</span>
                 </p>
 
                 <div class="d-grid gap-3">
@@ -416,8 +399,8 @@
 
                 <div class="hours-list" aria-label="Ώρες λειτουργίας">
                   <ul>
-                    <li><span>Καθημερινές</span><strong>9πμ - 2μμ &amp; 5μμ - 9μμ</strong></li>
-                    <li><span>Σάββατο - Κυριακή</span><strong>Κλειστά</strong></li>
+                    <li><span><span data-lang="el">Καθημερινές</span><span data-lang="en" style="display:none">Weekdays</span></span><strong>9πμ - 2μμ &amp; 5μμ - 9μμ</strong></li>
+                    <li><span><span data-lang="el">Σάββατο - Κυριακή</span><span data-lang="en" style="display:none">Saturday - Sunday</span></span><strong>Κλειστά</strong></li>
                   </ul>
                 </div>
               </div>
@@ -430,63 +413,64 @@
             <!--<form class="needs-validation" novalidate>
                   <div class="row g-3">
                     <div class="col-md-6">
-                      <label for="fullName" class="form-label fw-semibold">Ονοματεπώνυμο</label>
+                      <label for="fullName" class="form-label fw-semibold"><span data-lang="el">Ονοματεπώνυμο</span><span data-lang="en" style="display:none">Full name</span></label>
                       <input type="text" class="form-control form-control-lg" id="fullName" name="fullName" required>
-                      <div class="invalid-feedback">Συμπληρώστε το ονοματεπώνυμό σας.</div>
+                      <div class="invalid-feedback"><span data-lang="el">Συμπληρώστε το ονοματεπώνυμό σας.</span><span data-lang="en" style="display:none">Please fill in your full name.</span></div>
                     </div>
 
                     <div class="col-md-6">
-                      <label for="phone" class="form-label fw-semibold">Τηλέφωνο</label>
+                      <label for="phone" class="form-label fw-semibold"><span data-lang="el">Τηλέφωνο</span><span data-lang="en" style="display:none">Phone</span></label>
                       <input type="tel" class="form-control form-control-lg" id="phone" name="phone" required>
-                      <div class="invalid-feedback">Συμπληρώστε ένα τηλέφωνο επικοινωνίας.</div>
+                      <div class="invalid-feedback"><span data-lang="el">Συμπληρώστε ένα τηλέφων�� επικοινωνίας.</span><span data-lang="en" style="display:none">Please provide a contact phone number.</span></div>
                     </div>
 
                     <div class="col-md-6">
-                      <label for="email" class="form-label fw-semibold">Email</label>
+                      <label for="email" class="form-label fw-semibold"><span data-lang="el">Email</span><span data-lang="en" style="display:none">Email</span></label>
                       <input type="email" class="form-control form-control-lg" id="email" name="email" required>
-                      <div class="invalid-feedback">Συμπληρώστε έγκυρο email.</div>
+                      <div class="invalid-feedback"><span data-lang="el">Συμπληρώστε έγκυρο email.</span><span data-lang="en" style="display:none">Please provide a valid email.</span></div>
                     </div>
 
                     <div class="col-md-6">
-                      <label for="subject" class="form-label fw-semibold">Θέμα</label>
+                      <label for="subject" class="form-label fw-semibold"><span data-lang="el">Θέμα</span><span data-lang="en" style="display:none">Subject</span></label>
                       <select class="form-select form-select-lg" id="subject" name="subject" required>
-                        <option value="" selected disabled>Επιλέξτε θέμα</option>
-                        <option>Κλείσιμο ραντεβού</option>
-                        <option>Ερώτηση για εξέταση</option>
-                        <option>Ενημέρωση για θεραπεία</option>
-                        <option>Άλλο</option>
+                        <option value="" selected disabled><span data-lang="el">Επιλέξτε θέμα</span><span data-lang="en" style="display:none">Select subject</span></option>
+                        <option><span data-lang="el">Κλείσιμο ραντεβού</span><span data-lang="en" style="display:none">Book appointment</span></option>
+                        <option><span data-lang="el">Ερώτηση για εξέταση</span><span data-lang="en" style="display:none">Question about exam</span></option>
+                        <option><span data-lang="el">Ενημέρωση για θεραπεία</span><span data-lang="en" style="display:none">Therapy update</span></option>
+                        <option><span data-lang="el">Άλλο</span><span data-lang="en" style="display:none">Other</span></option>
                       </select>
-                      <div class="invalid-feedback">Επιλέξτε θέμα επικοινωνίας.</div>
+                      <div class="invalid-feedback"><span data-lang="el">Επιλέξτε θέμα επικοινωνίας.</span><span data-lang="en" style="display:none">Please select a subject.</span></div>
                     </div>
 
                     <div class="col-12">
-                      <label for="message" class="form-label fw-semibold">Μήνυμα</label>
+                      <label for="message" class="form-label fw-semibold"><span data-lang="el">Μήνυμα</span><span data-lang="en" style="display:none">Message</span></label>
                       <textarea class="form-control" id="message" name="message" rows="6" required placeholder="Γράψτε σύντομα το αίτημά σας..."></textarea>
-                      <div class="invalid-feedback">Συμπληρώστε το μήνυμά σας.</div>
+                      <div class="invalid-feedback"><span data-lang="el">Συμπληρώστε το μήνυμά σας.</span><span data-lang="en" style="display:none">Please enter your message.</span></div>
                     </div>
 
                     <div class="col-12">
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="1" id="consent" required>
                         <label class="form-check-label" for="consent">
-                          Συμφωνώ να με καλέσετε ή να μου στείλετε email σχετικά με το αίτημά μου.
+                          <span data-lang="el">Συμφωνώ να με καλέσετε ή να μου στείλετε email σχετικά με το αίτημά μου.</span>
+                          <span data-lang="en" style="display:none">I agree to be called or emailed about my request.</span>
                         </label>
-                        <div class="invalid-feedback">Απαιτείται συγκατάθεση.</div>
+                        <div class="invalid-feedback"><span data-lang="el">Απαιτείται συγκατάθεση.</span><span data-lang="en" style="display:none">Consent is required.</span></div>
                       </div>
                     </div>
 
                     <div class="col-12 d-flex flex-column flex-sm-row gap-3">
                       <button type="submit" class="btn btn-outline-brand btn-lg focus-ring">
-                        <i class="bi bi-send me-2" aria-hidden="true"></i> Αποστολή
+                        <i class="bi bi-send me-2" aria-hidden="true"></i> <span data-lang="el">Αποστολή</span><span data-lang="en" style="display:none">Send</span>
                       </button>
                       <a href="#home" class="btn btn-outline-brand btn-lg focus-ring">
-                        <i class="bi bi-arrow-up me-2" aria-hidden="true"></i> Επιστροφή στην αρχή
+                        <i class="bi bi-arrow-up me-2" aria-hidden="true"></i> <span data-lang="el">Επιστροφή στην αρχή</span><span data-lang="en" style="display:none">Back to top</span>
                       </a>
                     </div>
                   </div>
                 </form>  -->
                 <a href="#home" class="btn btn-outline-brand btn-lg focus-ring">
-                  <i class="bi bi-arrow-up me-2" aria-hidden="true"></i> Επιστροφή στην αρχή
+                  <i class="bi bi-arrow-up me-2" aria-hidden="true"></i> <span data-lang="el">Επιστροφή στην αρχή</span><span data-lang="en" style="display:none">Back to top</span>
                 </a>
               </div>
             </div>
@@ -500,31 +484,31 @@
     <div class="container">
       <div class="row g-4">
         <div class="col-md-5">
-          <h2 class="h4 text-white">Ονομα Επιθετο MD, PHD</h2>
-          <p class="mb-0">Νευρολόγος. Εξειδικευμενη διαγνωση & ανθρωπινη φροντοδα</p>
+          <h2 class="h4 text-white"><span data-lang="el">Ονομα Επιθετο MD, PHD</span><span data-lang="en" style="display:none">Firstname Lastname MD, PhD</span></h2>
+          <p class="mb-0"><span data-lang="el">Νευρολόγος. Εξειδικευμενη διαγνωση & ανθρωπινη φροντοδα</span><span data-lang="en" style="display:none">Neurologist. Specialized diagnosis & compassionate care</span></p>
         </div>
         <div class="col-md-3">
-          <h3 class="h5 text-white">Σύνδεσμοι</h3>
+          <h3 class="h5 text-white"><span data-lang="el">Σύνδεσμοι</span><span data-lang="en" style="display:none">Links</span></h3>
           <ul class="list-unstyled mb-0">
-            <li><a href="#home">Αρχική</a></li>
-            <li><a href="#services">Υπηρεσίες</a></li>
-            <li><a href="#about">Ιατρός</a></li>
+            <li><a href="#home"><span data-lang="el">Αρχική</span><span data-lang="en" style="display:none">Home</span></a></li>
+            <li><a href="#services"><span data-lang="el">Υπηρεσίες</span><span data-lang="en" style="display:none">Services</span></a></li>
+            <li><a href="#about"><span data-lang="el">Ιατρός</span><span data-lang="en" style="display:none">About</span></a></li>
           <!--  <li><a href="#articles">Άρθρα</a></li> -->
-            <li><a href="#contact">Επικοινωνία</a></li>
+            <li><a href="#contact"><span data-lang="el">Επικοινωνία</span><span data-lang="en" style="display:none">Contact</span></a></li>
           </ul>
         </div>
         <div class="col-md-4">
-          <h3 class="h5 text-white">Στοιχεία</h3>
+          <h3 class="h5 text-white"><span data-lang="el">Στοιχεία</span><span data-lang="en" style="display:none">Details</span></h3>
           <ul class="list-unstyled mb-0">
             <li><a href="tel:0987654321">0987 654 321</a></li>
             <li><a href="mailto:info@youremail.com.gr">info@youremail.gr</a></li>
-            <li>Πολη, Χωρα</li>
+            <li><span data-lang="el">Πολη, Χωρα</span><span data-lang="en" style="display:none">City, Country</span></li>
           </ul>
         </div>
       </div>
       <hr class="border-secondary my-4">
       <div class="d-flex flex-column flex-md-row justify-content-between gap-2">
-        <div class="text-white-50">© 2026 Ονομα Επιθετο MD, PHD</div>
+        <div class="text-white-50">© 2026 <span data-lang="el">Ονομα Επιθετο MD, PHD</span><span data-lang="en" style="display:none">Firstname Lastname MD, PhD</span></div>
         <div class="text-white-50">Built with Bootstrap 5</div>
       </div>
     </div>
@@ -543,6 +527,41 @@
           form.classList.add('was-validated');
         }, false);
       });
+
+      // Language toggle logic
+      const setLanguage = (lang) => {
+        document.documentElement.lang = lang === 'en' ? 'en' : 'el';
+        // Toggle inline text
+        document.querySelectorAll('[data-lang]').forEach(el => {
+          if (el.getAttribute('data-lang') === lang) {
+            el.style.display = '';
+          } else {
+            el.style.display = 'none';
+          }
+        });
+        // Update document title
+        const titleEl = document.querySelector('title');
+        if (titleEl && titleEl.dataset && titleEl.dataset.titleEn) {
+          titleEl.textContent = (lang === 'en') ? titleEl.dataset.titleEn : 'Ονομα Επιθετο MD, PHD | Νευρολόγος';
+        }
+        // Update meta description / keywords / author
+        const metaDesc = document.querySelector('meta[name="description"]');
+        const metaKeys = document.querySelector('meta[name="keywords"]');
+        const metaAuthor = document.querySelector('meta[name="author"]');
+        if (metaDesc && metaDesc.dataset) metaDesc.content = (lang === 'en') ? metaDesc.dataset.descEn : metaDesc.getAttribute('content');
+        if (metaKeys && metaKeys.dataset) metaKeys.content = (lang === 'en') ? metaKeys.dataset.keywordsEn : metaKeys.getAttribute('content');
+        if (metaAuthor && metaAuthor.dataset) metaAuthor.content = (lang === 'en') ? metaAuthor.dataset.authorEn : metaAuthor.getAttribute('content');
+        // Update image alts if provided
+        document.querySelectorAll('img[data-alt-en]').forEach(img => {
+          if (lang === 'en') img.alt = img.getAttribute('data-alt-en'); else img.alt = img.getAttribute('alt');
+        });
+      };
+
+      document.getElementById('lang-en').addEventListener('click', () => setLanguage('en'));
+      document.getElementById('lang-el').addEventListener('click', () => setLanguage('el'));
+
+      // initialize default language = el
+      setLanguage('el');
     })();
   </script>
 </body>
